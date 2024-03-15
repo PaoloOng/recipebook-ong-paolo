@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>Recipe Book</title>
+	</head>
+	<body>
+		<h1> Recipe Book </h1>
+		<form method="POST">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit">Login</button>
+		</form>
+		<a href="{% url 'password_reset' %}">I forgot my password!</a>
+	</body>
+</html>

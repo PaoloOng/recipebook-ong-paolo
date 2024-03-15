@@ -5,7 +5,13 @@
 	</head>
 	<body>
 		<h1> Recipe Book </h1>
+		<form method="POST" action="{% url 'logout' %}">
+			{% csrf_token %}
+			{{ form.as_p}}
+			<button type="submit">Logout</button>
+		</form>
 		<h2> {{ object.name }} </h2>
+		<h4> by {{ object.author }}</h4>
 		<ul>
 		{% for ingredient in object.ingredients.all %}
 		<li> {{ ingredient.ingredient }} - {{ ingredient.quantity }}</li>
